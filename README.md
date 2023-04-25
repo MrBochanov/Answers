@@ -7,15 +7,15 @@ DevOps
 **Вопрос:** Как проверить, открыт или закрыт порт на удаленном хосте, локальном хосте?
 
 **Ответ:** - 
-На удаленном telnet [HostName or IP] [PortNumber] или nmap [-options] [HostName or IP] [-p] [PortNumber] 
-telnet точечно, мне удобнее nmap т.к. можно сканировать диапозоны IP/портов 
+На удаленном telnet [HostName or IP] [PortNumber] или nmap [-options] [HostName or IP] [-p] [PortNumber] \
+telnet точечно, мне удобнее nmap т.к. можно сканировать диапозоны IP/портов \
 на локальном - netstat -plunt, в удобной форме
 
 ### Задача 2
 
 В Ubuntu есть файл с содержимым:
 
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+/# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 
 HISTSIZE=1000
 HISTFILESIZE=2000
