@@ -33,8 +33,8 @@ grep -lir 'for setting history length see HISTSIZE and HISTFILESIZE in bash(1)' 
 **Вопрос:** Объясните разницу между script1 & script2 и script1 && script2, а также script1 && script2 || script3?
 
 **Ответ:** - 
-- script1 & script2- амперсанд запускает процесс в бэкграунде, таким образом мы запускаем script2 не ожидаясь окончания выполнения script1 \
-- script1 && script2 - AND - последовательное выполнение script1, затем script2. если script1 завершается с ошибкой, script2 не запускается \
+- script1 & script2- амперсанд запускает процесс в бэкграунде, таким образом мы запускаем script2 не ожидаясь окончания выполнения script1 
+- script1 && script2 - AND - последовательное выполнение script1, затем script2. если script1 завершается с ошибкой, script2 не запускается 
 - script1 && script2 || script3 - OR - выполняем последовательно script1 и script2, в случае неуспеха запускается script3
 
 ### Задача 4
@@ -67,7 +67,7 @@ Host1 находится в подсети 172.100.0.0/24 с Host2. Host2 так
 **Вопрос:** В чем проблема и как решить?
 
 **Ответ:**
-Host3 -- обычный хост, который видит только в пределах своей 10.0.0.0 подсети, а значит он видит себя и Host2 (интерфейс 10.0.0.30), имеет default gateway 10.0.0.1 например \
+Host3 -- обычный хост, который видит только в пределах своей 10.0.0.0 подсети, а значит он видит себя и Host2 (интерфейс 10.0.0.30), имеет default gateway 10.0.0.1, например \
 Host1 посылает пакеты к 10.0.0.145 через шлюз 10.0.0.30, пакеты уходят, но ответа нет, т.к. нет обратного маршрута \
 Host3 ничего не знает про сеть 172.100.0.0/24, используя свой default gateway посылает вникуда. Надо добавить маршрут.
 
@@ -142,13 +142,13 @@ https://github.com/MrBochanov/helm-coming-soon
 
 **Ответ:**
 Deployment helloworld создаёт ReplicaSet который создаёт 2 пода совпадающих с лейблом  project: helloworld \
-Темплейт project: helloworld соответствует одному контейнеру, базирующемуся на testcontainers/helloworld с портом 8080 \
+Темплейт project: helloworld соответствует одному контейнеру, базирующемуся на testcontainers/helloworld с портом 8080 
 
 Deployment (name: helloworld-on-port-80) создаёт ReplicaSet, который создёт 1 под совпадающий с лейблом  project: helloworld и test: helloworld-on-port-80 \
-Темплейт project: helloworld и test: helloworld-on-port-80 соответствует одному контейнеру, базирующемуся на olliefr/docker-gs-ping с портом 8080 \
+Темплейт project: helloworld и test: helloworld-on-port-80 соответствует одному контейнеру, базирующемуся на olliefr/docker-gs-ping с портом 8080 
 
 Service (name: helloworld) таргетит 8080 порт к любому поду project: helloworld 8080 порту \
-Service (name: helloworld-on-port-80) таргетит 8080 порт к любому поду test: helloworld-on-port-80 8080 порту \
+Service (name: helloworld-on-port-80) таргетит 8080 порт к любому поду test: helloworld-on-port-80 8080 порту 
 
 Таким образом у нас все три пода имеют лейбл project=helloworld, являясь ендпоинтами сервиса helloworld: 
 ```
@@ -170,7 +170,7 @@ Session Affinity:  None
 Events:            <none>
 ```
 
-Но только 2 из них могут ответить 200 на /ping \
+Но только 2 из них могут ответить 200 на /ping 
 
 Решить можно по разному, самое наверное очевидное - переделать application-2.yaml \
 либо убрать лейбл project: helloworld из Deployment, либо задать project: helloworld-on-port-80, и в сервисе тоже \
