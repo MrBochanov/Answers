@@ -33,9 +33,9 @@ grep -lir 'for setting history length see HISTSIZE and HISTFILESIZE in bash(1)' 
 **Вопрос:** Объясните разницу между script1 & script2 и script1 && script2, а также script1 && script2 || script3?
 
 **Ответ:** - 
-script1 & script2- амперсанд запускает процесс в бэкграунде, таким образом мы запускаем script2 не ожидаясь окончания выполнения script1 \
-script1 && script2 - AND - последовательное выполнение script1, затем script2. если script1 завершается с ошибкой, script2 не запускается \
-script1 && script2 || script3 - OR - выполняем последовательно script1 и script2, в случае неуспеха запускается script3
+- script1 & script2- амперсанд запускает процесс в бэкграунде, таким образом мы запускаем script2 не ожидаясь окончания выполнения script1 \
+- script1 && script2 - AND - последовательное выполнение script1, затем script2. если script1 завершается с ошибкой, script2 не запускается \
+- script1 && script2 || script3 - OR - выполняем последовательно script1 и script2, в случае неуспеха запускается script3
 
 ### Задача 4
 
